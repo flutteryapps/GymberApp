@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GymberApp</string>
+
+    <string name="lbl_okay">OKAY</string>
+    <string name="lbl_retry">Retry</string>
+    <string name="msg_location_permission_needed">Location Permission Needed</string>
+    <string name="msg_sever_error_try_again">Something went wrong. Please try again</string>
+    <string name="lbl_internet_connection_not_available">OOPS! No Internet! Please check your network connection.</string>
+    <string name="msg_location_permission_rationale_retry">This app needs the Location permission to show you nearby Gyms, please grant location permission</string>
+    <string name="lbl_its_a_match">It\'s a Match</string>
+    <string name="lbl_keep_swiping">KEEP SWIPING</string>
+    <string name="lbl_schedule_a_session">Schedule a Session</string>
+    <string name="lbl_nope">NOPE</string>
+    <string name="lbl_like">LIKE</string>
+</resources>

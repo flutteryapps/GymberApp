@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motion_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/gym_scene"
+    tools:context=".view.FindGymActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardOne"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        app:cardCornerRadius="@dimen/spacing_large"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerCardOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/gym_image_view"
+                app:layout_constraintTop_toTopOf="@+id/gym_image_view" />
+
+            <ImageView
+                android:id="@+id/gym_image_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/image_bottom_barrier"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                android:scaleType="centerCrop" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/image_bottom_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="gym_name_text_view,gym_distance_text_view" />
+
+            <TextView
+                android:id="@+id/gym_name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:layout_marginBottom="@dimen/spacing_xsmall"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                app:layout_goneMarginBottom="@dimen/spacing_medium"
+                app:layout_constraintBottom_toTopOf="@id/gym_review_count_text_view"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <RatingBar
+                android:id="@+id/gym_rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:isIndicator="true" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/gym_review_count_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small"
+                android:layout_marginStart="@dimen/spacing_xxsmall"
+                android:layout_marginBottom="@dimen/spacing_xxsmall"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/gym_rating_bar"
+                app:layout_constraintTop_toTopOf="@id/gym_rating_bar"
+                app:layout_constraintBottom_toBottomOf="@id/gym_rating_bar" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/gym_distance_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/gym_not_like_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_xxlarge"
+                android:layout_margin="@dimen/spacing_xlarge"
+                android:textColor="@color/light_red_color"
+                android:text="@string/lbl_nope"
+                android:padding="@dimen/spacing_medium"
+                android:rotation="15"
+                android:textStyle="bold"
+                android:background="@drawable/swipe_left_nope_bg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:alpha="0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/gym_like_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_xxlarge"
+                android:layout_margin="@dimen/spacing_xlarge"
+                android:textColor="@color/light_green_color"
+                android:text="@string/lbl_like"
+                android:padding="@dimen/spacing_medium"
+                android:rotation="-15"
+                android:textStyle="bold"
+                android:background="@drawable/swipe_right_like_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:alpha="0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
